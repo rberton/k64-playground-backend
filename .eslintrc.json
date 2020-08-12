@@ -1,0 +1,54 @@
+{
+    "env": {
+      "node": true,
+      "jest": true,
+      "es6": true
+    },
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "tsconfig.json",
+      "ecmaVersion": 11,
+      "sourceType": "module"
+    },
+    "plugins": [
+        "import",
+        "jest",
+        "prettier"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:prettier/recommended",
+        "plugin:jest/recommended"
+    ],
+    "settings": {
+      "import/extensions": [".ts"],
+      "import/resolver": {
+        "node": {
+          "extensions": [".ts"]
+        }
+      }
+    },
+    "rules": {
+      "import/no-unresolved": 0,
+      "no-unused-vars": "warn",
+      "import/prefer-default-export": "off",
+      "import/no-default-export": "off",
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "ts": "never"
+        }
+      ],
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": false,
+          "tabWidth": 2,
+          "trailingComma": "es5"
+        }
+      ],
+      "jest/consistent-test-it": ["error", { "fn": "it" }]
+    }
+}
